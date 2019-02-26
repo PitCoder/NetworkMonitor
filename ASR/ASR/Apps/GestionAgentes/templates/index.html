@@ -1,0 +1,201 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block title %}<title>ASR</title> {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{% static 'apple-icon.png' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/cs-skin-elastic.css' %}">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="{% static 'assets/scss/style.css' %}">
+    <link href="{% static 'assets/css/lib/vector-map/jqvmap.min.css' %}" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+
+
+        <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="/"><img src="{% static 'images/Logo.png'%}" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="/"><img src="{% static 'images/logo2.png' %}" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/"> <i class="menu-icon fa fa-dashboard"></i>Inicio</a>
+                    </li>
+                    <h3 class="menu-title">Opciones</h3><!-- /.menu-title -->
+                    <li>
+                        <a href="admin/"> <i class="menu-icon fa fa-laptop"></i>Administrar agentes</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+           <div class="header-left">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Inicio</h1>
+                    </div>
+                </div>
+            </div>
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Lista de Agentes</li>
+                        </ol>
+                    </div>
+            </div>
+        </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="content mt-3">
+<div class="animated fadeIn">
+                <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Agentes</strong>
+                        </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Hostname</th>
+                        <th>Versión SNMP</th>
+                        <th>Puerto</th>
+                        <th>Comunidad</th>
+                        <th>OS</th>
+                        <th>Estado</th>
+                        <th>Interfaces</th>
+                        <th>Opción</th>
+                      </tr>
+                    </thead>
+
+                      <tbody>
+
+                {% for agente in agentes %}
+                <!--Agregamos un if y usamos <tr class="success"> o <tr class="danger"> para indicar si esta activo el agente-->
+
+                {% if agente.consulta == 'UpWindows' %}
+                <tr style="background: #d4edda;">
+
+                    <td>{{ agente.hostname }}</td>
+                    <td>{{ agente.vSNMP }}</td>
+                    <td>{{ agente.puerto }}</td>
+                    <td>{{ agente.comunidad }}</td>
+                    <td><img src="{% static 'images/windows.png' %}" width="20px" height="20px"></td>
+                    <td>Up</td>
+                    <td>{{ agente.interfacesActivas}}</td>
+                    <td><a href="edo/{{ agente.hostname }}/{{ agente.comunidad }}" class="">Monitorear</a></td>
+                </tr>
+
+               {% elif agente.consulta == "UpLinux" %}
+                <tr style="background: #d4edda;">
+
+                    <td>{{ agente.hostname }}</td>
+                    <td>{{ agente.vSNMP }}</td>
+                    <td>{{ agente.puerto }}</td>
+                    <td>{{ agente.comunidad }}</td>
+                    <td><img src="{% static 'images/linux.png' %}" width="20px" height="30px"></td>
+                    <td>Up</td>
+                    <td>{{ agente.interfacesActivas}}</td>
+                    <td><a href="edo/{{ agente.hostname }}/{{ agente.comunidad }}" class="">Monitorear</a></td>
+                </tr>
+
+                    {% else %}
+                <tr style="background: #f8d7da;">
+
+                    <td>{{ agente.hostname }}</td>
+                    <td>{{ agente.vSNMP }}</td>
+                    <td>{{ agente.puerto }}</td>
+                    <td>{{ agente.comunidad }}</td>
+                    <td><img src=""></td>
+                    <td>{{ agente.consulta }}</td>
+                    <td></td>
+                    <td><a href="" class="">Monitorear</a></td>
+                </tr>
+
+                    {% endif %}
+
+                {% endfor %}
+           </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .animated -->
+        </div> 
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="{% static 'assets/js/vendor/jquery-2.1.4.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/lib/chart-js/Chart.bundle.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+    <script src="{% static 'assets/js/widgets.js' %}"></script>
+    <script src="{% static 'assets/js/lib/vector-map/jquery.vmap.js' %}"></script>
+    <script src="{% static 'assets/js/lib/vector-map/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/vector-map/jquery.vmap.sampledata.js' %}"></script>
+    <script src="{% static 'assets/js/lib/vector-map/country/jquery.vmap.world.js' %}"></script>
+
+
+    <script src="{% static 'assets/js/lib/data-table/datatables.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/jszip.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/pdfmake.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/vfs_fonts.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.print.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/data-table/datatables-init.js' %}"></script>
+
+  </body>
+</html>

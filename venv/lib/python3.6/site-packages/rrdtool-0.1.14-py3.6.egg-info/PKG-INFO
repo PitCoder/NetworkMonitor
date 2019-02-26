@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: rrdtool
+Version: 0.1.14
+Summary: Python bindings for rrdtool
+Home-page: https://github.com/commx/python-rrdtool
+Author: Christian Kroeger, Hye-Shik Chang
+Author-email: commx@commx.ws
+License: LGPL
+Description: UNKNOWN
+Keywords: rrdtool
+Platform: UNKNOWN
+Classifier: License :: OSI Approved
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6

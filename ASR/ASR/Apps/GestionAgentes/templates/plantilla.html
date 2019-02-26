@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+{% block head %}<title>ASR</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load staticfiles %}
+
+    <link rel="apple-touch-icon" href="{% static '' %}apple-icon.png">
+    <link rel="shortcut icon" href="{% static 'favicon.ico'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/cs-skin-elastic.css' %}">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="{% static 'assets/scss/style.css' %}">
+    <link href="{% static 'assets/css/lib/vector-map/jqvmap.min.css' %}" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    </head>
+{% endblock %}
+<body>
+
+
+        <!-- Left Panel -->
+{% block menu %}
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="#"><img src="{%static 'Logo.png'%}" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="{% static 'images/logo2.png' %}" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/"> <i class="menu-icon fa fa-dashboard"></i>Inicio</a>
+                    </li>
+                    <h3 class="menu-title">Opciones</h3><!-- /.menu-title -->
+                    <li>
+                        <a href="admin/"> <i class="menu-icon fa fa-laptop"></i>Administrar agentes</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+{% endblock %}
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+    {% block header %}
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Inicio</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Lista de Agentes</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+
+        <div class="content mt-3">
+
+            <table>
+
+                    <tr>
+                        <td>Host</td>
+                        <td>v SNMP</td>
+                        <td>Puerto</td>
+                        <td>Comunidad</td>
+                    </tr>
+                {% for agente in agentes %}
+                    <tr>
+                    <td>{{ agente.hostname }}</td>
+                    <td>{{ agente.vSNMP }}</td>
+                    <td>{{ agente.puerto }}</td>
+                    <td>{{ agente.comunidad }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+    </div><!-- /#right-panel -->
+
+
+    <!-- Right Panel -->
+
+    <script src="{% static 'css/blog.css' %}assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/plugins.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/main.js"></script>
+
+
+    <script src="{% static 'css/blog.css' %}assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/dashboard.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/widgets.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="{% static 'css/blog.css' %}assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+
+  </body>
+</html>
