@@ -1,0 +1,17 @@
+Holt-Winters Forecasting for Dummies - Part III
+
+In Part I we’ve learned how to forceast one point, in Part II we’ve learned how to forecast two points. In this part we’ll learn how to forecast many points.
+
+More Terminology
+Season
+
+If a series appears to be repetitive at regular intervals, such an interval is referred to as a season, and the series is said to be seasonal. Seasonality is required for the Holt-Winters method to work, non-seasonal series (e.g. stock prices) cannot be forecasted using this method (would be nice though if they could be).
+
+Season Length
+
+Season length is the number of data points after which a new season begins. We will use L
+to denote season length.
+
+Seasonal Component
+
+The seasonal component is an additional deviation from level + trend that repeats itself at the same offset into the season. There is a seasonal component for every point in a season, i.e. if your season length is 12, there are 12 seasonal components. We will use s to denote the seasonal component.

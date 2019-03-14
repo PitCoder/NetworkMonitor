@@ -1,0 +1,28 @@
+Holt-Winters Forecasting for Dummies - Part II
+
+More terminology
+Level
+
+Expected value has another name, which, again varies depending on who wrote the text book: 
+
+	* Baseline
+	* Intercept (as in Y-intercept) 
+	* Level 
+
+We will stick with “level” here.
+
+So level is that one predicted point that we learned how to calculate in Part I. But because now it’s going to be only part of calculation of the forcast, we can no longer refer to it as y^
+and will instead use ℓ.
+
+Trend or Slope
+
+You should be familiar with slope from your high school algebra class. What you might be a little rusty on is how to calculate it, which is important, because a series slope has an interesting characteristic. Slope is:
+
+m = Δy / Δx
+
+where Δy is the difference in the y coordinates and Δx is the difference in the x coordinates, respectively, between two points. While in real algebraic problems Δx could be anything, in a series, from one point to the next, it is always 1. Which means that for a series, slope between two adjacent points is simply Δy1 or Δy
+
+or:
+b = yx−yx−1
+
+Where b is trend. To the best of my understanding terms “trend” and “slope” are interchangeable. In forecasting parlance “trend” is more common, and in math notation forecasters refer to it as b rather than m.

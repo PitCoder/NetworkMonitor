@@ -1,0 +1,18 @@
+Density Buckets
+
+LDPI 	120dpi .75x
+MDPI 	160dpi 1x
+HDPI 	240dpi 1.5x
+XHDPI 	320dpi 2x
+XXHDPI 	480dpi 3x
+XXXHDPI 640dpi 4x
+
+Control over the grafic assets
+
+Producing assets over only few densities.
+
+Asset crispness
+
+It is a common practice in order to avoid low resolution assets to include XXHDPI assets, and let Android scale them down or down-sample them.
+
+Check Android asset studio for tools to scale down.

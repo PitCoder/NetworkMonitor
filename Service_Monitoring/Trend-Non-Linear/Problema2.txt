@@ -1,0 +1,14 @@
+Definir los umbrales y justificar dichos umbrales (Definido mediante el paperwhite de Cisco).
+El umbral de  enmedio será un warning.
+El último umbral lo va a definir el fabricante.
+
+							-> Uso de CPU (Agente Propio)
+Problema 2 -> Linea de Base -> Uso de RAM
+							-> HDD
+							-> Trafico de Red
+
+		   -> Mínimos cuadrados -> Anaĺisis de un archivo existente y con base a dicho archivo
+		   (Datos, Fecha Inicio, Fecha Final): aplicar mínimos cuadrados (Solo gráfica e interpretación) 
+
+		   -> HW predict -> Aplicarlo a un agente simulado (Detectar comportamiento anómalo) y enviar una notificación.
+		   Ajustar correctamente los valores de α, β y γ 

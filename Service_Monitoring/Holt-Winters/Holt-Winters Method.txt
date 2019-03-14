@@ -1,0 +1,22 @@
+Holt-Winters Method
+	promedio -> Average, basic python function (covered)
+	promedio móvil -> Moving Average function (covered)
+	promedio ponderado -> weighted average function (covered)
+		suavizamiento exponencial -> exponential smoothing function (covered)
+		nivel, tendencia
+			alpha -> 0
+			alpha -> 1
+		suavizamiento exponencial doble (covered)
+			beta -> 0
+			beta -> 1
+		temporadas, coeficiente estacional, tendencia inicial
+		suavizamiento exponencial triple -> HW
+			gamma -> 0
+			gamma -> 1
+
+Evaluación de exámen: Administración de rendimiento
+		Línea base
+		Mínimos cuadrados
+		Holt Winters
+
+Del script implementar HoltWinters
