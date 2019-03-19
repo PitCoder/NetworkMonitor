@@ -14,6 +14,11 @@
 ### Introduction to Network Service Management
 <p align="justify">
 When hundreds or thousands of components (links, bridges, routers, hosts, etc...) are cobbled together by an organization to form a network, it is not surprising that components will occasionally malfunction, network elements will be misconfigured, resources be overutilized, or that network components will simply "break". The network administrator, whose job is to keep the network "up and running" must be able to respond to (and better yet, avoid) such mishaps. With potentially thousands of network components spread out over a wide area, the network administrator in a network operations center (NOC) clearly needs tools to help monitor, manage, and control the network. These tools must offer cover to the following scenarios:
+</p>
+
+<p align="center">
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/Management.gif" alt="Management"/>
+</p>
 
 - **Failure of an interface card at a host** 
 - **Monitoring traffic to aid in resource development**
@@ -21,6 +26,7 @@ When hundreds or thousands of components (links, bridges, routers, hosts, etc...
 - **Monitoring for SLA's (Service Level Agreements)
 - **Intrusion Detection**
 
+<p align="justify">
 The ISO states in the well known 7-layer ISO reference model the following five areas that network management must cover:
 
 - **Performance management**
@@ -58,8 +64,20 @@ MIB v2.0 has been used in this project, therefore monitoring of the following st
 </p>
 
 #### Codebase
+<p align="justify">
+The first part of the monitor is located at "ASR/". This folder contains all the implementation of the web application that monitors the agents using SNMP. It has been developed using Django framework (v2.0) and other util libraries (which are contained in the virtual environment). The project runs at port 8080 in localhost.
+  
+**Note:** Passwords for database access and more are specified at "User_Manual_1.pdf"
+</p>
 
 #### Screenshots
+
+<p align="center">
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part1_1.png" alt="Index"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part1_2.png" alt="CRUD"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part1_3.png" alt="Device State"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part1_4.png" alt="Monitoring"/>
+</p>
 
 ### Performance Monitoring and Failure Detection
 
@@ -72,7 +90,7 @@ MIB v2.0 has been used in this project, therefore monitoring of the following st
 
 <p align="center">
   
-| <a href="https://github.com/PitCoder" target="_blank">**Eric Alejandro López Ayala**</a> | <a href="github.com/JoelRomeroJL" target="_blank">**Joel Romero López**</a> |
+| <a href="https://github.com/PitCoder" target="_blank">**Eric Alejandro López Ayala**</a> | <a href="https://github.com/JoelRomeroJL" target="_blank">**Joel Romero López**</a> |
 | :---:| :---:|
 | [![Eric Alejandro López Ayala](https://avatars3.githubusercontent.com/u/22123865?s=200&v=2)](https://github.com/PitCoder)  | [![Joel Romero López](https://avatars2.githubusercontent.com/u/43273506?s=200&v=2)](https://github.com/JoelRomeroJL) |
 | <p>System Architect and Fullstack Developer</p> | <p>System Architect and Fullstack Developer</p> |
