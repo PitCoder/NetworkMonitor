@@ -64,7 +64,7 @@ MIB v2.0 has been used in this project, therefore monitoring of the following st
 
 #### Codebase
 <p align="justify">
-The first part of the monitor is located at "ASR/". This folder contains all the implementation of the web application that monitors the agents using SNMP. It has been developed using Django framework (v2.0) and other util libraries (which are contained in the virtual environment). The project runs at port 8080 in localhost.
+The first part of the monitor is located at "ASR/". This folder contains all the implementation of the web application that monitors the agents using SNMP. It has been developed using Django framework (v2.0) and other util libraries (which are contained in the virtual environment). The project runs at port 8000 at localhost.
   
 **Note:** Passwords for database access and more are specified at "User_Manual_1.pdf"
 </p>
