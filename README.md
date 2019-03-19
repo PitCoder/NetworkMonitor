@@ -107,7 +107,34 @@ The second part of the monitor is located at "Service_Monitoring/". This folder 
 
 ### Configuration Management and Server Monitoring
 
+#### Configuration Management
+Configuration management allows a network manager to track which devices are on the managed network and the hardware and software configurations of these devices. It provides documentation and scope of updated networks, and allows to perform repairs and modifications if needed.
 
+#### Server Monitoring
+All network monitors must supervise the functionality of servers that are available within the supervised network topology. This monitor provides support for the following types of servers:
+
+- **Email Servers:** servers that use IMAP, POP3 and SMTP protocols for mail service.
+- **Web Servers:** servers that host web sites and use HTTP protocol in their transactions.
+- **File Servers:** servers that are dowload centers and perform storage using FTP protocol.
+- **Printers Servers:** servers that manage the configuration of printers within a network using CUPS.
+- **Access Remote Servers:** servers that provide a remote access to their clients using SSH.
+
+#### Codebase
+<p align="justify">
+The third and last part of the monitor is located at "Sensors/". This folder contains scripts that provide an interface that allows interaction and operations over the previously mentioned servers. Also for each type of server, there is a test script for connection testing and availability of the server. 
+  
+**Note:** Server's credentials and more are specified at "User_Manual_3.pdf"
+</p>
+
+#### Screenshots
+
+<p align="center">
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part3_1.png" alt="Mail Sensor"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part3_2.png" alt="HTTP Sensor"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part3_3.png" alt="FTP Sensor"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part3_4.png" alt="CUPS Sensor"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part3_5.png" alt="SSH Sensor"/>
+</p>
 
 ### Team
 > This is the team that made this Network Monitor possible:
