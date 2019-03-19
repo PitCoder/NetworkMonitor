@@ -12,11 +12,29 @@
 - Configuration Management and Server Monitoring
 
 ### Introduction to Network Service Management
+<p align="justify">
+When hundreds or thousands of components (links, bridges, routers, hosts, etc...) are cobbled together by an organization to form a network, it is not surprising that components will occasionally malfunction, network elements will be misconfigured, resources be overutilized, or that network components will simply "break". The network administrator, whose job is to keep the network "up and running" must be able to respond to (and better yet, avoid) such mishaps. With potentially thousands of network components spread out over a wide area, the network administrator in a network operations center (NOC) clearly needs tools to help monitor, manage, and control the network. These tools must offer cover to the following scenarios:
 
+- **Failure of an interface card at a host** 
+- **Monitoring traffic to aid in resource development**
+- **Detecting rapid changes in routing tables**
+- **Monitoring for SLA's (Service Level Agreements)
+- **Intrusion Detection**
+
+The ISO states in the well known 7-layer ISO reference model the following five areas that network management must cover:
+
+- **Performance management**
+- **Fault management**
+- **Configuration management**
+- **Accounting management**
+- **Security management**
+
+This Network Monitor covers all the previously mentioned scenarios, as well the first 3 areas stated by the ISO. 
+</p>
 
 ### Network Monitoring using SNMP
 <p align="justify">
-SNMP has been used in the implemenation of this Network Monitor since it provides a framework which makes the communication and information exchange easier between one or more management systems and a number of agents. A SNMP network consists of the following elements:
+SNMP has been used in the implementation of this Network Monitor since it provides a framework which makes the communication and information exchange easier between one or more management systems and a number of agents. A SNMP network consists of the following elements:
 
 - **Management Stations**: Elements that manage the network agents.
 - **Network Agents**: Passive elements located at host nodes, routers, modems, multiplexors and more, that will be managed.
@@ -52,10 +70,14 @@ MIB v2.0 has been used in this project, therefore monitoring of the following st
 ### Team
 > This is the team that made this Network Monitor possible:
 
+<p align="center">
+  
 | <a href="https://github.com/PitCoder" target="_blank">**Eric Alejandro López Ayala**</a> | <a href="github.com/JoelRomeroJL" target="_blank">**Joel Romero López**</a> |
 | :---:| :---:|
 | [![Eric Alejandro López Ayala](https://avatars3.githubusercontent.com/u/22123865?s=200&v=2)](https://github.com/PitCoder)  | [![Joel Romero López](https://avatars2.githubusercontent.com/u/43273506?s=200&v=2)](https://github.com/JoelRomeroJL) |
 | <p>System Architect and Fullstack Developer</p> | <p>System Architect and Fullstack Developer</p> |
+
+</p>
 
 ### License
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/PitCoder/NetworkMonitor/blob/master/LICENSE)
