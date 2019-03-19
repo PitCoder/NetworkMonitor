@@ -4,11 +4,8 @@
 
 ### Content
 - Introduction to Network Service Management
-
 - Network Monitoring using SNMP
-
-- Perfomance Monitoring and Failure Detection
-
+- Monitoring for SLA's and Fault Management
 - Configuration Management and Server Monitoring
 
 ### Introduction to Network Service Management
@@ -23,7 +20,7 @@ When hundreds or thousands of components (links, bridges, routers, hosts, etc...
 - **Failure of an interface card at a host** 
 - **Monitoring traffic to aid in resource development**
 - **Detecting rapid changes in routing tables**
-- **Monitoring for SLA's (Service Level Agreements)
+- **Monitoring for SLA's (Service Level Agreements)**
 - **Intrusion Detection**
 
 <p align="justify">
@@ -44,6 +41,8 @@ SNMP has been used in the implementation of this Network Monitor since it provid
 
 - **Management Stations**: Elements that manage the network agents.
 - **Network Agents**: Passive elements located at host nodes, routers, modems, multiplexors and more, that will be managed.
+
+> Monitoring traffic to aid in resource development, Performance management and Configuration management are covered in this part.
 </p>
 
 #### MIB (Management Information Base)
@@ -79,7 +78,32 @@ The first part of the monitor is located at "ASR/". This folder contains all the
   <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part1_4.png" alt="Monitoring"/>
 </p>
 
-### Performance Monitoring and Failure Detection
+### Monitoring for SLA's and Fault Management
+#### Monitoring for SLA'S
+<p align="justify">
+Service Level Agreements (SLA) contracts define specific performance metrics and acceptable levels of network provider performance with respect to these metrics. These SLAs include service availability (outage), latency, throughput and outage notification requirements. Clearly, performance criteria as part of a service agreement between a network provider and its users, measuring and managing performance are of great importance to the network administrator.
+</p>
+
+#### Fault Management
+<p align="justify">
+The goal of fault management is to log, detect, and respond to fault conditions in the network. We can think of fault management as the immediate handling of transient network failures (e.g., link, host or router hardware or software outages). As with performance management, the SNMP protocol plays a central role in fault management of IP networks.
+</p>
+
+#### Codebase
+<p align="justify">
+The second part of the monitor is located at "Service_Monitoring/". This folder contains scripts that monitor SLA's and perform fault management. For prediction of faults, Holt Winter forecasting algorithm has been used, as well base line and minimum squares methods.
+  
+**Note:** SLA's contracts and more are specified at "User_Manual_2.pdf"
+</p>
+
+#### Screenshots
+
+<p align="center">
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part2_1.png" alt="Base Line"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part2_2.png" alt="Minimum Squares"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part2_3.png" alt="Holt Winters pt 1"/>
+  <img src="https://github.com/PitCoder/NetworkMonitor/blob/master/Img/part2_4.png" alt="Holt Winters pt 2"/>
+</p>
 
 ### Configuration Management and Server Monitoring
 
